@@ -1,0 +1,268 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Deedy - One Page Two Column Resume
+% LaTeX Template
+% Version 1.2 (16/9/2014)
+%
+% Original author:
+% Debarghya Das (http://debarghyadas.com)
+%
+% Original repository:
+% https://github.com/deedydas/Deedy-Resume
+%
+% IMPORTANT: THIS TEMPLATE NEEDS TO BE COMPILED WITH XeLaTeX
+%
+% This template uses several fonts not included with Windows/Linux by
+% default. If you get compilation errors saying a font is missing, find the line
+% on which the font is used and either change it to a font included with your
+% operating system or comment the line out to use the default font.
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 
+% TODO:
+% 1. Integrate biber/bibtex for article citation under publications.
+% 2. Figure out a smoother way for the document to flow onto the next page.
+% 3. Add styling information for a "Projects/Hacks" section.
+% 4. Add location/address information
+% 5. Merge OpenFont and MacFonts as a single sty with options.
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% CHANGELOG:
+% v1.1:
+% 1. Fixed several compilation bugs with \renewcommand
+% 2. Got Open-source fonts (Windows/Linux support)
+% 3. Added Last Updated
+% 4. Move Title styling into .sty
+% 5. Commented .sty file.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Known Issues:
+% 1. Overflows onto second page if any column's contents are more than the
+% vertical limit
+% 2. Hacky space on the first bullet point on the second column.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\documentclass[]{deedy-resume-openfont}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+    
+\pagestyle{fancy}
+\fancyhf{}
+    
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%     LAST UPDATED DATE
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\lastupdated
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%     TITLE NAME
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\namesection{张靖昊}{}{ \urlstyle{same}\href{mailto:zhang.jing.hao@outlook.com}{zhang.jing.hao@outlook.com} | 18645858867
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%     COLUMN ONE
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{minipage}[t]{0.30\textwidth} 
+\raggedright
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     PHOTO
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+{\centering
+\raisebox{-\height}{\includegraphics[height=3.4cm]{张靖昊照片.jpg}}\par}
+\vspace{4pt}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     EDUCATION
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{教育经历} 
+\sectionsep
+
+\subsection{悉尼科技大学}
+\descript{University of Technology, Sydney}
+\descript{软件工程（本科）}
+\location{2017.10 - 2019.10}
+\sectionsep
+
+\subsection{哈尔滨工程大学}
+\descript{Harbin Engineering University}
+\descript{计算机科学与技术（本科）}
+\location{2015.08 - 2019.07}
+\sectionsep
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     LINKS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{链接}
+\sectionsep
+Gitee: \href{https://gitee.com/ZBeeeeeeeeee}{https://gitee.com/ZBeeeeeeeeee} \\
+GitHub: \href{https://github.com/zbeeeeeeeeee}{https://github.com/zbeeeeeeeeee} \\
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     COURSEWORK
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \section{修读课程}
+% \subsection{Graduate}
+% Advanced Machine Learning \\
+% Open Source Software Engineering \\
+% Advanced Interactive Graphics \\
+% Compilers + Practicum \\
+% Cloud Computing \\
+% Evolutionary Computation \\
+% Defending Computer Networks \\
+% Machine Learning \\
+% \sectionsep
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     SKILLS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{技能}
+\sectionsep
+
+\subsection{AI 智能体}
+\location{熟练}
+Agent \textbullet{} MCP \textbullet{} RAG \\
+\textbullet{} Skills \textbullet{} Function Calling \\
+\location{熟悉}
+YOLO \textbullet{} OpenCV \textbullet{} 微调 \\
+\location{了解}
+模型量化 \textbullet{} 边缘部署 \\
+\sectionsep
+
+\subsection{应用开发}
+\location{熟练}
+鸿蒙（ArkTS）\textbullet{} Android（Java/Kotlin）\\
+\location{熟悉}
+Flutter \textbullet{} Vue \textbullet{} Electron \\
+\sectionsep
+
+\subsection{嵌入式}
+\location{熟练}
+鸿蒙设备开发 \\
+\location{了解}
+STM32 \textbullet{} 传感器对接 \\
+\sectionsep
+
+\subsection{工具 \& 平台}
+\location{熟练}
+Git \textbullet{} Linux \textbullet{} Docker \\
+\location{熟悉}
+Jenkins \textbullet{} MySQL \textbullet{} Postman \\
+\location{了解}
+Kubernetes \textbullet{} Wireshark \textbullet{} VS Code
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%     COLUMN TWO
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{minipage} 
+\hfill
+\begin{minipage}[t]{0.68\textwidth}
+\raggedright
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     EXPERIENCE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{工作经历}
+\sectionsep
+
+\runsubsection{浙江华为通信技术有限公司}
+\descript{AI 及软硬件开发工程师 | 金牌讲师}
+\location{2021.01 - 至今 | 杭州}
+\vspace{\topsep}
+\begin{tightemize}
+    \item 主导多个 AI 及软硬件项目的全栈开发，覆盖需求分析、方案设计到交付上线的完整生命周期
+    \item 作为公司\textbf{金牌讲师}，承担多个头部客户的培训任务，主导多门培训课程的设计与开发
+    \item 获\textbf{最优秀讲师大赛 TOP1}、\textbf{华为 LCS 内部 AI 应用开发大赛 TOP1}
+    \item 跨团队协作推进项目交付，具备较强的项目管理与技术沟通能力
+\end{tightemize}
+\sectionsep
+
+\runsubsection{同花顺}
+\descript{移动应用开发工程师}
+\location{2019.10 - 2020.12 | 杭州}
+\begin{tightemize}
+    \item 负责手机炒股 App 核心交易模块的功能设计与开发，支撑千万级用户的日常交易场景
+    \item 主导 AI 语音交易功能的方案设计与落地，实现语音指令解析到下单全流程的端到端打通
+    \item 参与移动端性能优化与架构迭代，提升应用稳定性与用户体验
+\end{tightemize}
+\sectionsep
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     RESEARCH
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{项目经历}
+\sectionsep
+\runsubsection{企业知识库智能问答 Agent 平台}
+\descript{架构设计 \& 核心开发}
+\location{2024.03 - 2024.11 | 华为}
+\begin{tightemize}
+    \item 主导基于\textbf{多 Agent + RAG}架构的企业级知识问答平台，覆盖文档接入、向量检索、答案生成的端到端链路
+    \item 通过 \textbf{MCP} 协议接入内部工具，结合 Function Calling 实现工单查询、报表拉取等动作型任务调度
+    \item 设计文档切片与混合检索策略，召回率较基线提升 30\%，已服务 5+ 头部客户上线
+\end{tightemize}
+\sectionsep
+
+\runsubsection{鸿蒙智能安防终端（端云协同）}
+\descript{全栈开发}
+\location{2022.06 - 2023.05 | 华为}
+\begin{tightemize}
+    \item 负责鸿蒙设备侧感知模块与 ArkTS 配套 App 的整体方案设计与开发，打通端侧采集到云端治理链路
+    \item 在设备侧部署 \textbf{YOLO + OpenCV} 轻量化目标检测，通过模型量化与剪枝将单帧推理压至 80ms 内
+    \item 牵头完成多设备组网与近场发现联调，交付 demo 进入客户 PoC 验收
+\end{tightemize}
+\sectionsep
+
+\runsubsection{AI 语音交易助手}
+\descript{方案设计 \& 移动端开发}
+\location{2020.03 - 2020.11 | 同花顺}
+\begin{tightemize}
+    \item 主导手机炒股 App 语音交易功能的方案设计，实现语音指令解析到下单全流程的端到端打通
+    \item 基于意图识别 + 槽位提取将口语化指令映射为交易参数，复杂语句识别准确率达 95\%
+    \item 兼容千万级日活场景下的并发与风控校验，上线后语音下单转化率提升 12\%
+\end{tightemize}
+\sectionsep
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     AWARDS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{所获荣誉} 
+\begin{tabular}{rll}
+2025    & 待补充  & 荣誉/证书名称 \\
+\end{tabular}
+\sectionsep
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     PUBLICATIONS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \section{Publications} 
+% \renewcommand\refname{\vskip -1.5cm} % Couldn't get this working from the .cls file
+% \bibliographystyle{abbrv}
+% \bibliography{publications}
+% \nocite{*}
+
+\end{minipage} 
+\end{document}  \documentclass[]{article}
