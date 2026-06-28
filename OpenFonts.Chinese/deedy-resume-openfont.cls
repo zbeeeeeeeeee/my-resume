@@ -37,8 +37,8 @@
 \setlength{\TPHorizModule}{1mm}
 \setlength{\TPVertModule}{1mm}
 \newcommand{\lastupdated}{\begin{textblock}{60}(155,5)
-\color{date}\fontspec[Path = fonts/, Extension=.otf]{FZYouSong GBK}\fontsize{8pt}{10pt}\selectfont 
-Last Updated on \today
+\color[HTML]{AAAAAA}\fontspec[Path = fonts/, Extension=.otf]{FZYouSong GBK}\fontsize{7pt}{9pt}\selectfont
+Last Updated on \today\ $\cdot$ with \LaTeX
 \end{textblock}}
 
 % Name command
