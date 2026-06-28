@@ -2,12 +2,6 @@
 
 基于 [Deedy-Resume](https://github.com/deedydas/Deedy-Resume) 的单页双栏 LaTeX 简历模板，支持中英文排版。
 
-## 预览
-
-<div align="center">
-    <img src="./OpenFonts.Chinese/sample-image.png" width="550">
-</div>
-
 ## 目录结构
 
 ```
