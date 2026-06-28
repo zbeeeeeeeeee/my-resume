@@ -67,7 +67,7 @@ Last Updated on \today
 
 % Subeadings command
 \titleformat{\subsection}{
-\color{subheadings}\fontspec[Path = fonts/, Extension=.otf, AutoFakeBold=1.5]{FZYouSong GBK}\fontsize{12pt}{12pt}\selectfont\bfseries}{}{0em}{}
+\color{subheadings}\fontspec[Path = fonts/, Extension=.otf, AutoFakeBold=1.5]{FZYouSong GBK}\fontsize{12pt}{12pt}\selectfont\bfseries\raggedright}{}{0em}{}
 
 \newcommand{\runsubsection}[1]{
 \color{subheadings}\fontspec[Path = fonts/, Extension=.otf, AutoFakeBold=1.5]{FZYouSong GBK}\fontsize{12pt}{12pt}\selectfont\bfseries {#1} \normalfont}
