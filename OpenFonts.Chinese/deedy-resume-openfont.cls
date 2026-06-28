@@ -22,6 +22,7 @@
 \definecolor{primary}{HTML}{2b2b2b} 
 \definecolor{headings}{HTML}{6A6A6A}
 \definecolor{subheadings}{HTML}{333333}
+\definecolor{accent}{HTML}{4A6A8A}
 
 % Set main fonts
 \usepackage{xeCJK}
@@ -45,13 +46,14 @@ Last Updated on \today\ $\cdot$ with \LaTeX
 \newcommand{\namesection}[3]{
 \centering{
 \fontsize{30pt}{30pt}
-\fontspec[Path = fonts/, Extension=.otf, AutoFakeBold=2.5]{FZYouSong GBK}\selectfont #1 
+\color{primary}
+\fontspec[Path = fonts/, Extension=.otf, AutoFakeBold=2.5]{FZYouSong GBK}\selectfont #1
 \fontspec[Path = fonts/, Extension=.otf, AutoFakeBold=2.5]{FZYouSong GBK}\selectfont #2
 } \\[5pt]
 \centering{
 \color{headings}
 \fontspec[Path = fonts/, Extension=.otf, AutoFakeBold=1.5]{FZYouSong GBK}\fontsize{11pt}{11pt}\selectfont #3}
-\noindent\makebox[\linewidth]{\color{headings}\rule{\paperwidth}{0.4pt}}
+\noindent\makebox[\linewidth]{\color{accent}\rule{\paperwidth}{0.4pt}}
 \vspace{-15pt}
 }
 
@@ -62,7 +64,7 @@ Last Updated on \today\ $\cdot$ with \LaTeX
 \newcommand{\sectionsep}{\vspace{8pt}}
 
 % Headings command
-\titleformat{\section}{\color{headings}
+\titleformat{\section}{\color{accent}
 \scshape\fontspec[Path = fonts/, Extension=.otf, AutoFakeBold=2.5]{FZYouSong GBK}\fontsize{16pt}{24pt}\selectfont \raggedright}{}{0em}{}
 
 % Subeadings command
