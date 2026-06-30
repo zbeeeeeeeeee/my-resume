@@ -49,14 +49,20 @@
 \usepackage{fancyhdr}
 \usepackage{graphicx}
 \usepackage{paracol}
+\usepackage{fontawesome5}
+\usepackage{lastpage}
+\geometry{bottom=1.5cm}
 \columnratio{0.30}
 \setlength{\columnsep}{0.04\textwidth}
 \globalcounter{*}
     
 \pagestyle{fancy}
 \fancyhf{}
-    
+\fancyfoot[C]{\color{headings}\thepage/\pageref{LastPage}}
+
 \begin{document}
+\color{primary}
+\thispagestyle{fancy}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
@@ -67,10 +73,35 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
-%     TITLE NAME
+%     CUSTOM HEADER (三栏：照片 | 姓名 | 联系方式)
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\namesection{张靖昊}{}{ 浙江杭州\ |\ 1997\ |\ \urlstyle{same}\href{mailto:zhang.jing.hao@outlook.com}{zhang.jing.hao@outlook.com} | 18645858867
+{
+\noindent
+\begin{minipage}[c]{0.15\textwidth}
+    \centering
+    \includegraphics[height=2.2cm]{张靖昊照片.jpg}
+\end{minipage}%
+\hfill
+\begin{minipage}[c]{0.52\textwidth}
+    \centering
+    {\color{primary}\fontspec[Path = fonts/, Extension=.otf, AutoFakeBold=2.5]{FZYouSong GBK}\fontsize{30pt}{30pt}\selectfont 张靖昊}
+    \\[2pt]
+    {\color{headings}\fontspec[Path = fonts/, Extension=.otf]{FZYouSong GBK}\fontsize{12pt}{12pt}\selectfont ZHANG Jinghao}
+\end{minipage}%
+\hfill
+\begin{minipage}[c]{0.28\textwidth}
+    \raggedright
+    \color{primary}
+    {\fontspec[Path = fonts/, Extension=.otf, AutoFakeBold=1.5]{FZYouSong GBK}\fontsize{10pt}{14pt}\selectfont
+    {\faMapMarker*\ 浙江杭州} \\
+    {\faCalendar*\ 1997} \\
+    {\faEnvelope}\ \href{mailto:zhang.jing.hao@outlook.com}{zhang.jing.hao@outlook.com} \\
+    {\faPhone*\ 18645858867}}
+\end{minipage}
+\\[5pt]
+\noindent\makebox[\linewidth]{\color{accent}\rule{\paperwidth}{0.4pt}}
+\vspace{-15pt}
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -81,13 +112,6 @@
 
 \begin{paracol}{2} 
 \raggedright
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%     PHOTO
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-{\centering
-\raisebox{-\height}{\includegraphics[height=3.4cm]{张靖昊照片.jpg}}\par}
-\vspace{4pt}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %     EDUCATION
@@ -183,7 +207,19 @@ OpenHarmony \textbullet{} STM32 \textbullet{} GPIO \textbullet{} I2C \textbullet
 
 IELTS 6.5 \textbullet{} 全英文跨国项目交付
 
+\sectionsep
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     LINKS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{链接}
+
+\href{https://gitee.com/ZBeeeeeeeeee}{Gitee: https://gitee.com/ZBeeeeeeeeee} \\
+\href{https://github.com/zbeeeeeeeeee}{GitHub: https://github.com/zbeeeeeeeeee}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
 %
 %     COLUMN TWO
 %
@@ -191,6 +227,7 @@ IELTS 6.5 \textbullet{} 全英文跨国项目交付
 
 \switchcolumn
 \raggedright
+\color{primary}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %     EXPERIENCE
@@ -199,12 +236,12 @@ IELTS 6.5 \textbullet{} 全英文跨国项目交付
 \section{工作经历}
 
 \runsubsection{浙江华为通信技术有限公司}
-\descript{AI 及软硬件开发工程师 | 金牌讲师}
+\descript{金牌讲师 | AI 开发 | 应用开发 | IoT嵌入式 }
 \location{2021.01 - 至今 | 杭州}
 \begin{tightemize}
     \item 主导多个 AI 及软硬件项目的全栈开发，覆盖需求分析、方案设计到交付上线的完整生命周期
-    \item 作为公司\textbf{金牌讲师}，承担多个头部客户的培训任务，主导多门培训课程的设计与开发
-    \item 跨团队协作推进项目交付，具备较强的项目管理与技术沟通能力
+    \item 作为公司\textbf{金牌讲师}，承担多个头部客户的培训任务，多次对接重点客户沟通需求，主导多门培训课程的设计与开发
+    \item 跨团队协作推进项目交付，承担多个重点项目PM及TD角色，具备较强的项目管理与技术沟通能力
 \end{tightemize}
 \sectionsep
 
@@ -238,54 +275,65 @@ IELTS 6.5 \textbullet{} 全英文跨国项目交付
 
 \section{研发项目经历}
 
-\runsubsection{企业知识库智能问答 Agent 平台}
+\runsubsection{交通事故检测系统（多智能体、端边云协同）}
 \descript{架构设计 \& 核心开发}
-\location{2024.03 - 2024.11 | 华为}
+\location{2025.06 - 2026.06}
 \begin{tightemize}
-    \item 主导基于\textbf{多 Agent + RAG}的企业级知识问答平台，覆盖文档接入、检索、生成的端到端链路
-    \item 通过 \textbf{MCP} 协议接入内部工具，结合 Function Calling 实现工单查询、报表拉取等动作型任务调度
-    \item 设计文档切片与混合检索策略，召回率提升 30\%，已服务 5+ 头部客户上线
+    \item 设计\textbf{四智能体协作管线}（场景感知→严重度评估→RAG 责任判定→报告生成），集成 MCP 协议工具调用与交通法规知识库，实现事故端到端自动分析定责
+    \item 基于昇腾 310B 部署 YOLOv11 边缘推理，通过\textbf{AIPP 算子}将图像预处理卸载至 NPU，降低 CPU 负载与推理延迟
+    \item 基于海思3861芯片设计鸿蒙硬件开发板并驱动传感器及周边外设，并开发鸿蒙终端应用。通过标定算法实现二维视觉坐标到经纬度映射，位置信息直传后台。
 \end{tightemize}
 \sectionsep
 
-\runsubsection{鸿蒙智能安防终端（端云协同）}
-\descript{全栈开发}
-\location{2022.06 - 2023.05 | 华为}
+\runsubsection{OpenWork — AI 智能工作助手}
+\descript{架构设计 \& 全栈开发}
+\location{2026.03 - 2026.06 | 个人项目}
 \begin{tightemize}
-    \item 负责鸿蒙设备侧感知模块与 ArkTS 配套 App 的设计开发，打通端侧采集到云端治理链路
-    \item 在设备侧部署 \textbf{YOLO + OpenCV} 轻量化目标检测，单帧推理压至 80ms 内
-    \item 牵头完成多设备组网与近场发现联调，交付 demo 进入客户 PoC 验收
+    \item 自研\textbf{AI Agent 框架}，实现多轮工具调用循环，基于 XML 标签解析替代 JSON Function Calling，支持 OpenAI 兼容协议与流式响应
+    \item 基于 Vue 3 + Monaco Editor + Electron 构建\textbf{四包单体仓库}架构，设计三合一文件系统抽象层，运行时自动适配 IPC/REST/Browser FSA，支持 Web 与桌面双模式部署
+    \item 集成\textbf{MCP 协议}（stdio/SSE/HTTP），实现外部工具自动发现与注册；设计滑动窗口会话记忆系统，支持 Markdown/PDF/Office 等多格式文档处理与 AI 辅助工作流，支持Skills、RAG
 \end{tightemize}
 \sectionsep
 
-\runsubsection{AI 语音交易助手}
-\descript{方案设计 \& 移动端开发}
-\location{2020.03 - 2020.11 | 同花顺}
+\runsubsection{基于 AI 大模型 MCP 的鸿蒙煤矿巡检机器人}
+\descript{硬件设计 \& 系统开发}
+\location{2025.03 - 2026.03 | 校企合作 }
 \begin{tightemize}
-    \item 主导手机炒股 App 语音交易功能的方案设计，实现语音指令到下单全流程的端到端打通
-    \item 基于意图识别 + 槽位提取将口语化指令映射为交易参数，识别准确率达 95\%
-    \item 兼容千万级日活场景下的并发与风控校验，语音下单转化率提升 12\%
+    \item 设计巡检机器人\textbf{鸿蒙硬件系统}，集成激光雷达、红外热成像、多气体传感器、9轴IMU等感知模块，完成底盘驱动控制与开发板选型搭建
+    \item 基于\textbf{鸿蒙分布式软总线}构建井下设备互联，通过 MCP 协议实现多源传感器统一接入与\textbf{自然语言控制}，探索具身智能在工业场景落地
+    \item 结合华为云 IoTDA 实现端侧数据采集与平台命令下发，打通端-边-云全链路
 \end{tightemize}
 \sectionsep
 
-\runsubsection{华为培训业务中台（微服务架构）}
-\descript{架构设计 \& 后端开发}
-\location{2021.06 - 2022.03 | 华为}
+\runsubsection{基于 YOLO 与 STM32 的 AGV 自主循迹平台}
+\descript{嵌入式 \& 视觉系统开发}
+\location{2024.03 - 2024.09 | 华为}
 \begin{tightemize}
-    \item 主导培训业务中台的\textbf{微服务架构设计}，基于 Spring Boot 拆分课程、排课、考核等服务
-    \item 设计 MySQL + PostgreSQL 混合存储与读写分离方案，核心接口延迟压至 100ms 内
-    \item 沉淀服务治理与接口规范，新业务接入周期缩短约 40\%
+    \item 设计\textbf{STM32 + CAN 总线}运动控制方案，通过 CAN 连接昇腾 310B 主控板，实现两芯片间实时指令通信与电机/舵机闭环驱动
+    \item 在昇腾 310B 部署 YOLO 视觉推理，识别路面引导线与标识物，实现 AGV \textbf{自主循迹}与\textbf{运动跟随}功能
+    \item 完成从硬件选型、运动控制算法、YOLO模型训练到模块集成的全链路开发，AGV 实现稳定自主行驶
 \end{tightemize}
 \sectionsep
 
-\runsubsection{AI 应用开发实训与评测平台}
-\descript{全栈开发}
-\location{2022.09 - 2023.02 | 华为}
+\runsubsection{HCIA/HCIP 鸿蒙应用与设备认证项目}
+\descript{认证架构设计 \& 鸿蒙应用 \& 嵌入式}
+\location{2021.03 - 2023.06 | 华为}
 \begin{tightemize}
-    \item 基于 Node.js + Vue 搭建在线实训与评测平台，支撑内部 AI 应用开发大赛的提交与自动评分
-    \item 设计可插拔评测调度与多语言沙箱架构，稳定承载千人级并发
+    \item 主导鸿蒙四大认证体系（HCIA/HCIP 应用 + 设备）架构设计与开发，涵盖认证大纲制定、实验环境搭建与考核标准定义，期间参与若干现网应用与设备项目开发
+    \item 负责\textbf{鸿蒙应用认证}方向（ArkTS App 开发），设计应用架构案例与实验教程，并包含基于 MindSpore Lite 的端侧 AI 应用开发，支撑华为鸿蒙生态人才培养
+    \item 负责\textbf{鸿蒙设备认证}方向（OpenHarmony），完成硬件选型与嵌入式实验设计，覆盖 GPIO/I2C/UART/传感器驱动等常见外设
 \end{tightemize}
-\vspace{2pt}
+\sectionsep
+
+\runsubsection{手机炒股 App 交易与智能功能开发}
+\descript{Android 开发}
+\location{2019.10 - 2020.12 | 同花顺}
+\begin{tightemize}
+    \item 负责 Android 端核心\textbf{交易模块}开发，涵盖实盘下单、撤单、持仓管理等功能，兼容千万级日活场景下的并发与风控校验
+    \item 主导\textbf{AI 语音交易}功能，基于意图识别 + 槽位提取将口语化指令映射为交易参数，识别准确率达 95\%
+    \item 设计\textbf{批量"打新"}功能，实现多账户一键申购、中签查询与缴款提醒，并参与 App 冷启动、列表流畅度等性能优化
+\end{tightemize}
+\sectionsep
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %     PUBLICATIONS

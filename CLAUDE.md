@@ -6,13 +6,15 @@ This is a **LaTeX resume project** (fork of Deedy-Resume-For-Chinese), not a sof
 
 ## Build
 
-Must use **XeLaTeX** (not pdflatex), run from the variant directory so `fonts/` is on the lookup path:
+Must use **XeLaTeX** (not pdflatex), run from the variant directory so `fonts/` is on the lookup path. `make` is not available on this machine; use the direct command:
 
 ```bash
 cd OpenFonts.Chinese && xelatex -interaction=nonstopmode -halt-on-error resume.tex
+# then copy the output to docs/ (from repo root):
 mv OpenFonts.Chinese/resume.pdf docs/resume-cn.pdf
 ```
 
+- The photo file `张靖昊照片.jpg` is referenced by `resume.tex` and must be present in the variant directory for compilation to succeed.
 - BibTeX is only needed if the commented-out `\bibliography{publications}` block in `resume.tex` is re-enabled.
 - Expected font-shape warnings (small-caps substitution for 思源宋体) are harmless. Only `Error`/`! ` lines indicate real failures.
 - **Success criterion**: `Output written on resume.pdf (1 page)`. If it reports 2+ pages, the edit caused overflow and must be trimmed.
@@ -26,9 +28,11 @@ Single-page, two-column Chinese resume using the Deedy template with open-source
 | `OpenFonts.Chinese/resume.tex` | **Primary file** — resume content (identity, education, skills, experience, projects) |
 | `OpenFonts.Chinese/deedy-resume-openfont.cls` | Document class — page geometry, color scheme, section/heading macros, font config, compact list environment |
 | `OpenFonts.Chinese/fonts/` | Bundled CJK fonts (Source Han Sans/Serif + FZYouSong) |
-| `docs/` | Build output — committed PDFs (`resume-cn.pdf`) |
+| `OpenFonts.Chinese/张靖昊照片.jpg` | Profile photo included in the left column |
+| `docs/` | Build output — committed PDF (`resume-cn.pdf`) |
 | `scripts/build.sh` | Two-target build script (Chinese + English); invoked by Makefile |
-| `OpenFonts/` | English variant — contains **upstream sample data**, not the user's. Only edit if asked. |
+
+> The `OpenFonts/` and `MacFonts/` directories referenced in upstream docs do not exist in this repo.
 
 ### Key macros (defined in `.cls`, used in `resume.tex`)
 
@@ -42,17 +46,19 @@ Single-page, two-column Chinese resume using the Deedy template with open-source
 
 ### Layout
 
-Two-column layout via `paracol` (left column ~30%, right column ~70%). Left column: photo, education, links, skills. Right column: work experience, projects, awards. Designed to fit exactly **one page**.
+Two-column layout via `paracol` (left column ~30%, right column ~70%). Left column: photo, education, links, skills, awards, languages. Right column: work experience, training projects, R&D projects. Designed to fit exactly **one page**.
 
 ## Compile quirks
 
-- Both `resume.tex` files end with `\end{document}  \documentclass[]{article}` on the same line — an upstream template quirk. TeX stops at `\end{document}`, so this is harmless. Do not "fix" it.
+- `resume.tex` ends with `\end{document}  \documentclass[]{article}` on the same line — an upstream template quirk. TeX stops at `\end{document}`, so this is harmless. Do not "fix" it.
 - Font lookups use relative `Path = fonts/` in the `.cls` — build must be run from the variant directory.
 - The `.cls` redefines `\refname` for the publications bibliography block.
+- Auxiliary files (`.aux`, `.log`, `.out`) and `resume.pdf` are generated in the variant directory during build. They are gitignored but may accumulate locally.
 
 ## Editing conventions
 
-- Content language is **Chinese**; section headers and skill-level labels (熟练/熟悉/了解) are established — match them.
+- Content language is **Chinese**; section headers (教育经历, 技能, 所获荣誉, 语言能力, 工作经历, etc.) and skill-level labels (熟练/熟悉/了解) are established — match them.
 - Placeholder strings like `待补充` mark unfilled fields. Preserve them rather than inventing content.
 - Personal data is inline in `\namesection{张靖昊}{}{...}`.
-- After every content edit to `resume.tex`, recompile and verify single-page output before considering the task done.
+- **After every content edit to `resume.tex`, recompile and verify single-page output** before considering the task done.
+- `.bak` files (e.g. `resume.tex.bak`, `deedy-resume-openfont.cls.bak`) are manual backups of prior versions. Do not edit them; if you need to restore, verify with the user first.

@@ -19,16 +19,16 @@
 % Color definitions
 \usepackage[usenames,dvipsnames]{xcolor} 
 \definecolor{date}{HTML}{666666} 
-\definecolor{primary}{HTML}{2b2b2b} 
+\definecolor{primary}{HTML}{000000}
 \definecolor{headings}{HTML}{6A6A6A}
 \definecolor{subheadings}{HTML}{333333}
 \definecolor{accent}{HTML}{4A6A8A}
 
 % Set main fonts
 \usepackage{xeCJK}
-\setCJKmainfont[Path = fonts/, Extension=.otf, AutoFakeBold=2.5, AutoFakeSlant=0.2]{FZYouSong GBK}
+\setCJKmainfont[Path = fonts/, Extension=.otf, AutoFakeBold=4.0, AutoFakeSlant=0.2]{FZYouSong GBK}
 \setCJKsansfont[Path = fonts/source-han-sans/, Scale=MatchLowercase, Mapping=tex-text]{SourceHanSansSC-ExtraLight}
-\setmainfont[Color=primary, Path = fonts/, Extension=.otf, AutoFakeBold=2.5, AutoFakeSlant=0.2]{FZYouSong GBK}
+\setmainfont[Path = fonts/, Extension=.otf, AutoFakeBold=4.0, AutoFakeSlant=0.2]{FZYouSong GBK}
 \setsansfont[Scale=MatchLowercase,Mapping=tex-text, Path = fonts/source-han-sans/]{SourceHanSansSC-ExtraLight}
 \xeCJKsetup{CJKecglue={\hskip 0.15em plus 0.05em minus 0.05em}}
 
@@ -69,14 +69,14 @@ Last Updated on \today\ $\cdot$ with \LaTeX
 
 % Subeadings command
 \titleformat{\subsection}{
-\color{subheadings}\fontspec[Path = fonts/, Extension=.otf, AutoFakeBold=1.5]{FZYouSong GBK}\fontsize{12pt}{12pt}\selectfont\bfseries\raggedright}{}{0em}{}
+\color{primary}\fontspec[Path = fonts/, Extension=.otf, AutoFakeBold=1.5]{FZYouSong GBK}\fontsize{12pt}{12pt}\selectfont\bfseries\raggedright}{}{0em}{}
 
 \newcommand{\runsubsection}[1]{
-\color{subheadings}\fontspec[Path = fonts/, Extension=.otf, AutoFakeBold=1.5]{FZYouSong GBK}\fontsize{12pt}{12pt}\selectfont\bfseries {#1} \normalfont}
+\color{primary}\fontspec[Path = fonts/, Extension=.otf, AutoFakeBold=1.5]{FZYouSong GBK}\fontsize{12pt}{12pt}\selectfont\bfseries {#1} \normalfont}
 
 % Descriptors command
 \newcommand{\descript}[1]{
-\color{subheadings}\raggedright\fontspec[Path = fonts/, Extension=.otf]{FZYouSong GBK}\fontsize{10pt}{10pt}\selectfont {#1 \\} \normalfont}
+\color{primary}\raggedright\fontspec[Path = fonts/, Extension=.otf]{FZYouSong GBK}\fontsize{10pt}{10pt}\selectfont {#1 \\} \normalfont}
 
 % Location command
 \newcommand{\location}[1]{
@@ -84,6 +84,6 @@ Last Updated on \today\ $\cdot$ with \LaTeX
 
 % Bullet Lists with fewer gaps command
 \newenvironment{tightemize}{
-\vspace{-\topsep}\begin{itemize}\itemsep1pt \parskip0pt \parsep0pt}
+\vspace{-\topsep}\begin{itemize}\itemsep1pt \parskip0pt \parsep0pt\color{primary}}
 {\end{itemize}\vspace{-\topsep}}
 
