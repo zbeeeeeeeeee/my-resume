@@ -1,45 +1,127 @@
-# 张靖昊 · 简历
+# 张靖昊 · ZHANG Jinghao
 
-基于 [Deedy-Resume](https://github.com/deedydas/Deedy-Resume) 的单页双栏 LaTeX 简历模板，支持中英文排版。
+📍 浙江杭州 · 🎂 1997 · 📧 [zhang.jing.hao@outlook.com](mailto:zhang.jing.hao@outlook.com) · 📱 18645858867
 
-## 目录结构
+AI 智能体 / 软件架构 / 全栈开发
 
-```
-├── OpenFonts.Chinese/          # 中文版简历
-│   ├── resume.tex              # 主文件
-│   ├── deedy-resume-openfont.cls  # 文档类
-│   └── fonts/                  # 中文字体文件
-├── docs/                       # 编译输出 PDF
-├── scripts/                    # 构建脚本
-├── Makefile                    # 构建命令
-└── README.md
-```
+---
 
-## 编译
+## 教育经历
 
-需要 **XeLaTeX** 编译器。
+| 学校 | 专业 | 时间 |
+|------|------|------|
+| **悉尼科技大学** (UTS) | 软件工程（本科） | 2017.10 – 2019.10 |
+| **哈尔滨工程大学** (HEU) | 计算机科学与技术（本科） | 2015.08 – 2019.07 |
+
+## 工作经历
+
+### 浙江华为通信技术有限公司 —— 金牌讲师 · AI 开发 · 应用开发 · IoT 嵌入式
+*2021.01 – 至今 | 杭州*
+
+- 主导多个 AI 及软硬件项目的全栈开发，覆盖需求分析、方案设计到交付上线的完整生命周期
+- 作为公司**金牌讲师**，承担多个头部客户的培训任务，多次对接重点客户沟通需求，主导多门培训课程的设计与开发
+- 跨团队协作推进项目交付，承担多个重点项目 PM 及 TD 角色，具备较强的项目管理与技术沟通能力
+
+### 同花顺 —— 移动应用开发工程师
+*2019.10 – 2020.12 | 杭州*
+
+- 负责手机炒股 App 核心交易模块的设计与开发，支撑千万级用户交易场景
+- 主导 AI 语音交易功能落地，参与移动端性能优化与架构迭代
+
+## 研发项目
+
+### 交通事故检测系统（多智能体、端边云协同）
+*2025.06 – 2026.06 | 架构设计 & 核心开发*
+
+- 设计**四智能体协作管线**（场景感知→严重度评估→RAG 责任判定→报告生成），集成 MCP 协议工具调用与交通法规知识库，实现事故端到端自动分析定责
+- 基于昇腾 310B 部署 YOLOv11 边缘推理，通过 **AIPP 算子**将图像预处理卸载至 NPU，降低 CPU 负载与推理延迟
+- 基于海思 3861 芯片设计鸿蒙硬件开发板并驱动传感器及周边外设，开发鸿蒙终端应用，实现二维视觉坐标到经纬度映射
+
+### OpenWork — AI 智能工作助手
+*2026.03 – 2026.06 | 个人项目 | 架构设计 & 全栈开发*
+
+- 自研 **AI Agent 框架**，实现多轮工具调用循环，基于 XML 标签解析替代 JSON Function Calling，支持 OpenAI 兼容协议与流式响应
+- 基于 Vue 3 + Monaco Editor + Electron 构建**四包单体仓库**架构，设计三合一文件系统抽象层，支持 Web 与桌面双模式部署
+- 集成 **MCP 协议**（stdio/SSE/HTTP），实现外部工具自动发现与注册；设计滑动窗口会话记忆系统，支持 Markdown/PDF/Office 等多格式文档处理与 AI 辅助工作流，支持 Skills、RAG
+
+### 基于 AI 大模型 MCP 的鸿蒙煤矿巡检机器人
+*2025.03 – 2026.03 | 校企合作 | 硬件设计 & 系统开发*
+
+- 设计巡检机器人**鸿蒙硬件系统**，集成激光雷达、红外热成像、多气体传感器、9 轴 IMU 等感知模块，完成底盘驱动控制与开发板选型搭建
+- 基于**鸿蒙分布式软总线**构建井下设备互联，通过 MCP 协议实现多源传感器统一接入与**自然语言控制**，探索具身智能在工业场景落地
+- 结合华为云 IoTDA 实现端侧数据采集与平台命令下发，打通端-边-云全链路
+
+### 基于 YOLO 与 STM32 的 AGV 自主循迹平台
+*2024.03 – 2024.09 | 华为 | 嵌入式 & 视觉系统开发*
+
+- 设计 **STM32 + CAN 总线**运动控制方案，通过 CAN 连接昇腾 310B 主控板，实现两芯片间实时指令通信与电机/舵机闭环驱动
+- 在昇腾 310B 部署 YOLO 视觉推理，识别路面引导线与标识物，实现 AGV **自主循迹**与**运动跟随**功能
+- 完成从硬件选型、运动控制算法、YOLO 模型训练到模块集成的全链路开发
+
+### HCIA/HCIP 鸿蒙应用与设备认证项目
+*2021.03 – 2023.06 | 华为 | 认证架构设计 & 鸿蒙应用 & 嵌入式*
+
+- 主导鸿蒙四大认证体系（HCIA/HCIP 应用 + 设备）架构设计与开发，涵盖认证大纲制定、实验环境搭建与考核标准定义
+- 负责**鸿蒙应用认证**方向（ArkTS App 开发），设计应用架构案例与实验教程，包含基于 MindSpore Lite 的端侧 AI 应用开发，支撑华为鸿蒙生态人才培养
+- 负责**鸿蒙设备认证**方向（OpenHarmony），完成硬件选型与嵌入式实验设计，覆盖 GPIO/I2C/UART/传感器驱动等常见外设
+
+### 手机炒股 App 交易与智能功能开发
+*2019.10 – 2020.12 | 同花顺 | Android 开发*
+
+- 负责 Android 端核心**交易模块**开发，涵盖实盘下单、撤单、持仓管理等功能，兼容千万级日活场景下的并发与风控校验
+- 主导 **AI 语音交易**功能，基于意图识别 + 槽位提取将口语化指令映射为交易参数，识别准确率达 95%
+- 设计**批量"打新"**功能，实现多账户一键申购、中签查询与缴款提醒，并参与 App 冷启动、列表流畅度等性能优化
+
+## 培训项目
+
+- 2026 安哥拉国家能水部 AI & IoT 管技融合培训
+- 2026 香港证券交易所 CXO / All Staff 讲座
+- 2026 中石油北京石油 AI 辅助编程 & OpenHarmony 技术培训
+- 2022–2024 国能集团神东、宁煤数字化转型培训
+- 2023 香港特别行政区房屋署技术培训
+- 2023 华能集团管技融合培训
+- 2023–2026 厦门大学、福州大学、深圳技术大学等高校讲座
+
+## 技能
+
+| 领域 | 技术栈 |
+|------|--------|
+| **AI 智能体** | Agent · 多 Agent 架构 · MCP · RAG · Skills · Function Calling · YOLO · OpenCV · 模型微调/量化/边缘部署 |
+| **应用开发** | 鸿蒙（ArkTS）· Android（Java/Kotlin）· Flutter · Vue · Electron |
+| **嵌入式** | OpenHarmony · STM32 · GPIO · I2C · UART · MQTT · 传感器驱动 · 网络通信 |
+| **软件架构 & 后端** | 软件架构设计 · 微服务 · Java · Spring Boot · Node.js · RESTful API · MySQL · PostgreSQL |
+
+## 所获荣誉
+
+| 年份 | 奖项 |
+|------|------|
+| **2025** | 金牌个人奖 |
+| **2025** | 华为 LCS 第一届 AI 应用开发大赛 TOP1 |
+| **2023** | 浙江华为第七届最优秀讲师大赛 TOP1 |
+| **2022** | 金牌个人奖 |
+| **2017** | 全美大学生数学建模大赛 Outstanding 奖 |
+
+## 语言能力
+
+英文可作为工作语言 — IELTS 6.5 · 全英文跨国项目交付
+
+## 链接
+
+- Gitee: [https://gitee.com/ZBeeeeeeeeee](https://gitee.com/ZBeeeeeeeeee)
+- GitHub: [https://github.com/zbeeeeeeeeee](https://github.com/zbeeeeeeeeee)
+
+---
+
+<details>
+<summary>📄 PDF 简历 & 编译说明</summary>
+
+PDF 版本见 [docs/resume-cn.pdf](docs/resume-cn.pdf)。
+
+如需自行编译，需要 XeLaTeX：
 
 ```bash
-# 直接编译
-cd OpenFonts.Chinese && xelatex resume.tex
-
-# 或使用 Makefile
-make
+cd OpenFonts.Chinese && xelatex -interaction=nonstopmode -halt-on-error resume.tex
 ```
 
-## 简历要点
-
-- **求职方向**：AI 智能体 / 软件架构 / 全栈开发
-- **当前职位**：华为 AI 及软硬件开发工程师 & 金牌讲师
-- **所在地**：浙江杭州 · 1997 年
-- **核心技能**：多 Agent 架构 · MCP · RAG · Spring Boot · Node.js · OpenHarmony · 模型部署
-- **项目亮点**：企业知识库问答 Agent 平台、鸿蒙端云协同安防、AI 语音交易助手、微服务培训中台
-
-## 致谢
-
-- 感谢 [Deedy-Resume](https://github.com/deedydas/Deedy-Resume) 提供的原始模板
-- 感谢 Adobe 开源的[思源系列字体](https://github.com/adobe-fonts)
-
-## License
-
-Apache 2.0 — 字体部分见各自开源协议
+简历基于 [Deedy-Resume](https://github.com/deedydas/Deedy-Resume) 模板，使用 Adobe 开源的[思源系列字体](https://github.com/adobe-fonts)。
+</details>
