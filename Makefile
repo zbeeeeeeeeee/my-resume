@@ -1,7 +1,6 @@
 CC = xelatex
-CHINESE_DIR = OpenFonts.Chinese
+CHINESE_DIR = src
 ENGLISH_DIR = OpenFonts
-OUTPUT_DIR = docs
 
 NAME = resume
 

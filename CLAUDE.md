@@ -9,15 +9,13 @@ This is a **LaTeX resume project** (fork of Deedy-Resume-For-Chinese), not a sof
 Must use **XeLaTeX** (not pdflatex), run from the variant directory so `fonts/` is on the lookup path. `make` is not available on this machine; use the direct command:
 
 ```bash
-cd OpenFonts.Chinese && xelatex -interaction=nonstopmode -halt-on-error resume.tex
-# then copy the output to docs/ (from repo root):
-mv OpenFonts.Chinese/resume.pdf docs/resume-cn.pdf
+cd src && xelatex -interaction=nonstopmode -halt-on-error resume.tex
 ```
 
 - The photo file `张靖昊照片.jpg` is referenced by `resume.tex` and must be present in the variant directory for compilation to succeed.
 - BibTeX is only needed if the commented-out `\bibliography{publications}` block in `resume.tex` is re-enabled.
 - Expected font-shape warnings (small-caps substitution for 思源宋体) are harmless. Only `Error`/`! ` lines indicate real failures.
-- **Success criterion**: `Output written on resume.pdf (1 page)`. If it reports 2+ pages, the edit caused overflow and must be trimmed.
+- **Success criterion**: PDF compiles without `Error`/`! ` lines. The resume currently spans 2 pages — this is expected.
 
 ## Architecture
 
@@ -25,11 +23,10 @@ Single-page, two-column Chinese resume using the Deedy template with open-source
 
 | Path | Role |
 |---|---|
-| `OpenFonts.Chinese/resume.tex` | **Primary file** — resume content (identity, education, skills, experience, projects) |
-| `OpenFonts.Chinese/deedy-resume-openfont.cls` | Document class — page geometry, color scheme, section/heading macros, font config, compact list environment |
-| `OpenFonts.Chinese/fonts/` | Bundled CJK fonts (Source Han Sans/Serif + FZYouSong) |
-| `OpenFonts.Chinese/张靖昊照片.jpg` | Profile photo included in the left column |
-| `docs/` | Build output — committed PDF (`resume-cn.pdf`) |
+| `src/resume.tex` | **Primary file** — resume content (identity, education, skills, experience, projects) |
+| `src/deedy-resume-openfont.cls` | Document class — page geometry, color scheme, section/heading macros, font config, compact list environment |
+| `src/fonts/` | Bundled CJK fonts (Source Han Sans/Serif + FZYouSong) |
+| `src/张靖昊照片.jpg` | Profile photo included in the left column |
 | `scripts/build.sh` | Two-target build script (Chinese + English); invoked by Makefile |
 
 > The `OpenFonts/` and `MacFonts/` directories referenced in upstream docs do not exist in this repo.
@@ -46,7 +43,7 @@ Single-page, two-column Chinese resume using the Deedy template with open-source
 
 ### Layout
 
-Two-column layout via `paracol` (left column ~30%, right column ~70%). Left column: photo, education, links, skills, awards, languages. Right column: work experience, training projects, R&D projects. Designed to fit exactly **one page**.
+Two-column layout via `paracol` (left column ~30%, right column ~70%). Left column: photo, education, skills, awards, languages, links. Right column: work experience, R&D projects, training projects. Currently spans **two pages**.
 
 ## Compile quirks
 

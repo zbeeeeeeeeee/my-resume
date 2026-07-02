@@ -15,16 +15,16 @@
 % default. If you get compilation errors saying a font is missing, find the line
 % on which the font is used and either change it to a font included with your
 % operating system or comment the line out to use the default font.
-% 
+%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% 
+%
 % TODO:
 % 1. Integrate biber/bibtex for article citation under publications.
 % 2. Figure out a smoother way for the document to flow onto the next page.
 % 3. Add styling information for a "Projects/Hacks" section.
 % 4. Add location/address information
 % 5. Merge OpenFont and MacFonts as a single sty with options.
-% 
+%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 % CHANGELOG:
@@ -55,7 +55,7 @@
 \columnratio{0.30}
 \setlength{\columnsep}{0.04\textwidth}
 \globalcounter{*}
-    
+
 \pagestyle{fancy}
 \fancyhf{}
 \fancyfoot[C]{\color{headings}\thepage/\pageref{LastPage}}
@@ -110,14 +110,14 @@
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{paracol}{2} 
+\begin{paracol}{2}
 \raggedright
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %     EDUCATION
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{教育经历} 
+\section{教育经历}
 
 \subsection{悉尼科技大学}
 \descript{University of Technology, Sydney}
@@ -236,10 +236,10 @@ IELTS 6.5 \textbullet{} 全英文跨国项目交付
 \section{工作经历}
 
 \runsubsection{浙江华为通信技术有限公司}
-\descript{金牌讲师 | AI 开发 | 应用开发 | IoT嵌入式 }
+\descript{AI Agent 架构师 | 金牌讲师}
 \location{2021.01 - 至今 | 杭州}
 \begin{tightemize}
-    \item 主导多个 AI 及软硬件项目的全栈开发，覆盖需求分析、方案设计到交付上线的完整生命周期
+    \item 主导内部\textbf{AI Agent Harness} 平台建设，抽象 Agent 生命周期、工具调用、会话管理等通用能力，支撑多业务线智能体应用标准化接入与交付
     \item 作为公司\textbf{金牌讲师}，承担多个头部客户的培训任务，多次对接重点客户沟通需求，主导多门培训课程的设计与开发
     \item 跨团队协作推进项目交付，承担多个重点项目PM及TD角色，具备较强的项目管理与技术沟通能力
 \end{tightemize}
@@ -258,40 +258,34 @@ IELTS 6.5 \textbullet{} 全英文跨国项目交付
 %     RESEARCH
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{培训项目经历}
+\section{研发项目经历}
 
-\sectionsep
-
+\runsubsection{基于 AI Harness 的 HarmonyOS 辅助应用研发平台}
+\descript{架构师}
+\location{2026.03 - 2026.07}
 \begin{tightemize}
-    \item 2026 安哥拉国家能水部 AI \& IoT 管技融合培训
-    \item 2026 香港证券交易所 CXO / All Staff 讲座
-    \item 2026 中石油北京石油AI辅助编程OpenHarmony技术培训
-    \item 2022-2024 国能集团神东、宁煤数字化转型培训
-    \item 2023 香港特别行政区房屋署技术培训
-    \item 2023 华能集团管技融合培训
-    \item 2023-2026 厦门大学、福州大学、深圳技术大学等高校讲座
+    \item 基于 AI LLM 构建 Harness，实现从需求分析→方案制定→评审→代码编写→集成编译测试→Code Review→Git 合并→应用落地的全流程 AI 辅助研发
+    \item 集成各类 CLI 工具实现 CI/CD 自动化流水线，结合 RAG 与知识图谱挂载研发垂域知识，提升研发效率与代码质量
 \end{tightemize}
 \sectionsep
-
-\section{研发项目经历}
 
 \runsubsection{交通事故检测系统（多智能体、端边云协同）}
 \descript{架构设计 \& 核心开发}
 \location{2025.06 - 2026.06}
 \begin{tightemize}
-    \item 设计\textbf{四智能体协作管线}（场景感知→严重度评估→RAG 责任判定→报告生成），集成 MCP 协议工具调用与交通法规知识库，实现事故端到端自动分析定责
+    \item 设计\textbf{多智能体协作管线}（场景感知→严重度评估→RAG 责任判定→报告生成），集成 MCP 协议工具调用与交通法规知识库，实现事故端到端自动分析定责
     \item 基于昇腾 310B 部署 YOLOv11 边缘推理，通过\textbf{AIPP 算子}将图像预处理卸载至 NPU，降低 CPU 负载与推理延迟
     \item 基于海思3861芯片设计鸿蒙硬件开发板并驱动传感器及周边外设，并开发鸿蒙终端应用。通过标定算法实现二维视觉坐标到经纬度映射，位置信息直传后台。
 \end{tightemize}
 \sectionsep
 
-\runsubsection{OpenWork — AI 智能工作助手}
-\descript{架构设计 \& 全栈开发}
+\runsubsection{OpenWork — AI Agent Harness \& 智能工作助手}
+\descript{Harness 架构设计 \& 全栈开发}
 \location{2026.03 - 2026.06 | 个人项目}
 \begin{tightemize}
-    \item 自研\textbf{AI Agent 框架}，实现多轮工具调用循环，基于 XML 标签解析替代 JSON Function Calling，支持 OpenAI 兼容协议与流式响应
-    \item 基于 Vue 3 + Monaco Editor + Electron 构建\textbf{四包单体仓库}架构，设计三合一文件系统抽象层，运行时自动适配 IPC/REST/Browser FSA，支持 Web 与桌面双模式部署
-    \item 集成\textbf{MCP 协议}（stdio/SSE/HTTP），实现外部工具自动发现与注册；设计滑动窗口会话记忆系统，支持 Markdown/PDF/Office 等多格式文档处理与 AI 辅助工作流，支持Skills、RAG
+    \item 自研\textbf{AI Agent Harness}，实现 Agent 生命周期管理、多轮工具调用循环与任务编排，基于 XML 标签解析替代 JSON Function Calling，支持 OpenAI 兼容协议与流式响应，支持 MCP、Skills、RAG
+    \item 设计\textbf{Skills 插件系统}与滑动窗口会话记忆，实现技能热加载与上下文动态注入；内置权限分级与沙箱隔离机制，保障工具调用安全可控
+    \item 基于 Vue 3 + Monaco Editor + Electron 构建四包单体仓库桌面应用，设计三合一文件系统抽象层，支持 Server Web/桌面双模式部署
 \end{tightemize}
 \sectionsep
 
@@ -302,6 +296,16 @@ IELTS 6.5 \textbullet{} 全英文跨国项目交付
     \item 设计巡检机器人\textbf{鸿蒙硬件系统}，集成激光雷达、红外热成像、多气体传感器、9轴IMU等感知模块，完成底盘驱动控制与开发板选型搭建
     \item 基于\textbf{鸿蒙分布式软总线}构建井下设备互联，通过 MCP 协议实现多源传感器统一接入与\textbf{自然语言控制}，探索具身智能在工业场景落地
     \item 结合华为云 IoTDA 实现端侧数据采集与平台命令下发，打通端-边-云全链路
+\end{tightemize}
+\sectionsep
+
+\runsubsection{SlideGenius 帧帧成课}
+\descript{AI 应用开发}
+\location{2025.02 - 2025.05 | 华为内部工具}
+\begin{tightemize}
+    \item 基于 PPT 智能构建讲义与课程视频的自动化工具，结合数字人与 TTS 模型实现快速课程生成
+    \item 设计\textbf{双智能体管线}：内容识别智能体将 PPT 切片为图片并通过 Qwen3-VL 视觉模型提取课件内容与逻辑；讲义生成智能体使用DeepSeek-V3模型构建讲义脚本，并通过上下文工程确保页间承上启下
+    \item 集成数字人驱动与 TTS 语音合成，实现从 PPT 到课程视频的端到端自动生成
 \end{tightemize}
 \sectionsep
 
@@ -335,11 +339,26 @@ IELTS 6.5 \textbullet{} 全英文跨国项目交付
 \end{tightemize}
 \sectionsep
 
+\section{培训项目经历}
+
+\sectionsep
+
+\begin{tightemize}
+    \item 2026 安哥拉国家能水部 AI \& IoT 管技融合培训
+    \item 2026 香港证券交易所 CXO / All Staff 讲座
+    \item 2026 中石油北京石油AI辅助编程OpenHarmony技术培训
+    \item 2022-2024 国能集团神东、宁煤数字化转型培训
+    \item 2023 香港特别行政区房屋署技术培训
+    \item 2023 华能集团管技融合培训
+    \item 2023-2026 厦门大学、福州大学、深圳技术大学等高校讲座
+\end{tightemize}
+\sectionsep
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %     PUBLICATIONS
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% \section{Publications} 
+% \section{Publications}
 % \renewcommand\refname{\vskip -1.5cm} % Couldn't get this working from the .cls file
 % \bibliographystyle{abbrv}
 % \bibliography{publications}

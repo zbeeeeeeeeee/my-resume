@@ -115,12 +115,12 @@ AI 智能体 / 软件架构 / 全栈开发
 <details>
 <summary>📄 PDF 简历 & 编译说明</summary>
 
-PDF 版本见 [docs/resume-cn.pdf](docs/resume-cn.pdf)。
+PDF 版本见 [src/resume.pdf](src/resume.pdf)。
 
 如需自行编译，需要 XeLaTeX：
 
 ```bash
-cd OpenFonts.Chinese && xelatex -interaction=nonstopmode -halt-on-error resume.tex
+cd src && xelatex -interaction=nonstopmode -halt-on-error resume.tex
 ```
 
 简历基于 [Deedy-Resume](https://github.com/deedydas/Deedy-Resume) 模板，使用 Adobe 开源的[思源系列字体](https://github.com/adobe-fonts)。
